@@ -1,0 +1,48 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    width: 70%;
+    height: 70%;
+    padding: 15% ;
+}
+.main{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    margin-left: 100px;
+}
+button{
+    background-color:aqua;
+    color: white;
+    width: 50px;
+    height: 30px;
+    
+}
+.row{
+ display: flex;
+ justify-content: end;  
+}
+p ,#t1,button{
+    margin: 20px;
+}
+
+
+h3 ,h1{
+    font-family: cursive;
+   border: 2px solid black;
+}
+h3{
+    margin: 50px 270px;
+    width: 300px;
+    height: 40px;
+}
+h1{
+    margin: 50px 200px;
+    width: 500px;
+    height: 300px;
+    padding: 20px; 
+    padding: 5px 70px;  
+
+}

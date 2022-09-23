@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+    <script src="{% static 'javascript.js' %}"></script>
+</head>
+<body>
+   <!-- <div class="main1">
+   <p>Your Name <input type="text" name="in1"></p>
+   <p>Dojo Location 
+    <select name="s1" id="s1">
+        <option value="San Juse">San Juse</option>
+        <option value="Jenin">jenin</option>
+        <option value="Nabls">Nabls</option>
+        <option value="Ramlla">Ramlla</option>
+    </select>
+   </p>
+   <p>Favarist Language 
+    <select name="s2" id="s2">
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="C#">C#</option>
+        <option value="SQL">SQL</option>
+    </select>
+   </p>
+   <p>Comment(Option)</p>
+   <textarea name="n" id="n" cols="30" rows="10"></textarea>
+   </div>  -->
+   <div class="container">
+    <div class="main">
+       <form action="result/" method="post">
+        {% csrf_token %}
+        <p>Your Name is :<input type="text" name="yourname"></p>
+        <p>Dojo Location:
+        <select name ="mylist">
+        <option>San Jouse</option>
+        <option>Ramalla</option>
+        <option>Nabls</option>
+        <option>Jenin</option>
+
+        </select></p>
+        <p>Favorite Langage<select name ="mylanguage">
+            <option>Python</option>
+            <option>Java</option>
+            <option>C#</option>
+            <option>Marne</option>
+            </select></p>
+
+            <p>Commints (Optional)</p>
+            <textarea name="mycomments" id="t1" cols="30" rows="10"></textarea>
+           <div class="row"> <button><input type="submit">Button</button></div>
+       </form>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+    <script src="{% static 'javascript.js' %}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <p>Your Name is : {{yourname_from_context}}></p>
+            <p>Dojo Location: {{list_from_context}}</p>
+            <p>Favorite Langage: {{language_from_context}}</p>
+    
+                <p>Commints (Optional): {{mycomments_from_context}}</p>
+               
+               <div class="row"> <button><input type="submit">Log out</button></div>
+        </div>
+    
+    </div>
+</body>
+</html>

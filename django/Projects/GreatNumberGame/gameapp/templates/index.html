@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">  
+    <script src="{% static 'java.js' %}"></script>
+</head>
+<body>
+  <h1>welcome to greate number Game!!</h1>
+  <h3>I am thinking a number between 1 and 100 <br> Take a guess!! </h3> 
+
+  {% if key1 == key2  %}
+     <div class="box1">
+      <p>This num is Equals</p>
+    </div>
+  {% elif key1 > key2  %}
+     <div  class="box"><p>The number is too small</p>
+    </div>
+  {%  else  %}
+     <div   class="box"><p>Exactly the num thatgrat!!</p>
+    </div>
+  {%endif%}
+  <form action="/m" method="post">
+    {% csrf_token %}
+    <input type="number" name="num"> 
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
