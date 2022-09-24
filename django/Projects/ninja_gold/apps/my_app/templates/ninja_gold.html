@@ -37,6 +37,10 @@
             border: solid 2px black;
             background-color: aliceblue;
         }
+        .selection_box button{
+            box-shadow: 10px 5px black;
+        }
+    
 
         .box_selection_container{
             text-align: center;
@@ -68,7 +72,9 @@
         .startover{
             margin-left: 380px;
         }
-
+        h4{
+            font-family: cursive;
+        }
 
     </style>
   </head>
@@ -85,26 +91,25 @@
                 {% csrf_token %}
                 <div class="selection_box">
                     <h4>Farm</h4>
-                    <p>(earn/lose 1-8 gold)</p>
+                    <p>(earn 10- 20 gold)</p>
                     <button type="submit" class="btn btn-outline-dark" name="button" value="farm">Get Gold</button>
                 </div>
                 <div class="selection_box">
                         <h4>Cave</h4>
-                        <p>(earn/lose 0-10 gold)</p>
+                        <p>(earn 10 -20 gold)</p>
                         <button type="submit" class="btn btn-outline-dark" name="button" value="cave">Get Gold</button>
 
                 </div>
                 <div class="selection_box">
-                        <h4>Loot People</h4>
-                        <p>(earn/lose 2-5 gold)</p>
+                        <h4>House</h4>
+                        <p>(earn 10 -20 gold)</p>
                         <button type="submit" class="btn btn-outline-dark" name="button" value="loot">Get Gold</button>
 
                 </div>
                 <div class="selection_box">
                         <h4>Casino</h4>
-                        <p>(earn/lose 10-100 gold)</p>
+                        <p>(earn 0-50 gold)</p>
                         <button type="submit" class="btn btn-outline-dark" name="button" value="casino">Get Gold</button>
-
                 </div>
             </form>
                 
@@ -119,7 +124,7 @@
                        
                 </div>
 
-                <a href="/restart" class="startover"><button type="button" class="btn btn-outline-danger">Start Over</button></a>
+                <!-- <a href="/restart" class="startover"><button type="button" class="btn btn-outline-danger">Start Over</button></a> -->
 
             </div>
 

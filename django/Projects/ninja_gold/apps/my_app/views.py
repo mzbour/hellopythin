@@ -15,7 +15,7 @@ def process_money(request):
     if request.POST['button'] == 'farm':
         no_whammies = random.randrange(1,3)
         if no_whammies == 1:
-            goldval = random.randrange(1,9)
+            goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log = "<p class='greentext'>Got yourself a good crop this season. you've earned %s gold  (%s)</p>" %(str(goldval),timestamp)
@@ -24,7 +24,7 @@ def process_money(request):
             request.session['act_log'] = temp
             request.session["gold_count"] += goldval
         if no_whammies == 2:
-            goldval = random.randrange(1,9)
+            goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log= "<p class='greentext'>Got yourself a good crop this season. you've earned %s gold  (%s)</p>" %(str(goldval),timestamp)
@@ -36,7 +36,7 @@ def process_money(request):
     if request.POST['button'] == 'cave':
         no_whammies = random.randrange(1,3)
         if no_whammies == 1:
-            goldval = random.randrange(0,11)
+            goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log = "<p class='greentext'> Youve found some treasure! Found %s gold!  (%s)</p>" %(str(goldval),timestamp)
@@ -45,7 +45,7 @@ def process_money(request):
             request.session['act_log'] = temp
             request.session["gold_count"] += goldval
         if no_whammies == 2:
-            goldval = random.randrange(1,11)
+            goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log= "<p class='redtext'> you hear some noises that scare you. you run away like a pansy loosing %s gold (%s)</p>" %(str(goldval),timestamp)
@@ -57,7 +57,7 @@ def process_money(request):
     if request.POST['button'] == 'loot':
         no_whammies = random.randrange(1,3)
         if no_whammies == 1:
-            goldval = random.randrange(2,6)
+            goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log = "<p class='greentext'>Earned %s gold from looting a random person! you might want to re-evaluate your life. (%s)</p>" %(str(goldval),timestamp)
@@ -66,7 +66,7 @@ def process_money(request):
             request.session['act_log'] = temp
             request.session["gold_count"] += goldval
         if no_whammies == 2:
-            goldval = random.randrange(2,5)
+            goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log= "<p class='redtext'> The person you tried to mug fights back! serves you right. you loose %s gold (%s)</p>" %(str(goldval),timestamp)
@@ -78,7 +78,7 @@ def process_money(request):
     if request.POST['button'] == 'casino':
         no_whammies = random.randrange(1,3)
         if no_whammies == 1:
-            goldval = random.randrange(10,101)
+            goldval = random.randrange(0,50)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log = "<p class='greentext'>Earned %s gold from the casino! lady luck has been kind to you! (%s)</p>" %(str(goldval),timestamp)
@@ -87,7 +87,7 @@ def process_money(request):
             request.session['act_log'] = temp
             request.session["gold_count"] += goldval
         if no_whammies == 2:
-            goldval = random.randrange(10,101)
+            goldval = random.randrange(0,50)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
             event_log= "<p class='redtext'> you've lost %s gold from the casino! lady luck, why have you forsaken me! (%s)</p>" %(str(goldval),timestamp)

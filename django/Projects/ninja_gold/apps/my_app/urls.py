@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
 		path('', views.index),
         path('process_money', views.process_money),
-        path('restart', views.restart_game)
+        path('restart/', views.restart_game)
 	]

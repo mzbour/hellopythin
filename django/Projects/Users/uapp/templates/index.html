@@ -32,18 +32,12 @@
    <form action="/root" method="post">
     {% csrf_token %}
      <div><p>FirstName <input name="ffname" type="text" ></p>
-        <p>last Name <input name="Lname "type="text" ></p>
+          <p>last Name <input name="llname" type="text" ></p>
     </div>
     <div><p>Email <input type="text" name="eemail"></p>
         <p>Age<input type="text" name="aage"></p>
     </div>
-    <button type="submit">enter your changes</button>
+    <button type="submit">add</button>
    </form>
 </body>
 </html>
-<!-- <h1>All Movies</h1>
-<ul>
-{% for movie in all_the_movies %}
-    <li>{{ movie.title }}</li>
-{% endfor %}
-</ul> -->

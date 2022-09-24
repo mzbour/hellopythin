@@ -12,6 +12,7 @@ def index(request):
 
 
 def index1(request):
-    User.objects.create(first_name=request.POST['ffname'],last_name=request.POST['Lname'],email=request.POST['eemail'] ,age=int(request.POST['aage']),created_at="",updated_at="")
+    User.objects.create(first_name=request.POST['ffname'],last_name=request.POST['llname'],email=request.POST['eemail'] ,age=int(request.POST['aage']),created_at="",updated_at="")
+    # User.objects.create(first_name=request.POST['ffname'],last_name=request.POST['llname'],email=request.POST['eemail'] ,age=int(request.POST['aage']),created_at="",updated_at="")
 
-    return redirect(request,'/')
+    return redirect('/')
