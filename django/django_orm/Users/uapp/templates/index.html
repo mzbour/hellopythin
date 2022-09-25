@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+    <script src="{% static 'java.js' %}"></script>
+</head>
+<body>
+    <h1>All the Users</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        {% for user in all_the_users %}
+         <tr>
+            <td>{{ user.first_name }} </td>
+            <td>{{ user.last_name }} </td>
+            <td>{{ user.email }} </td>
+            <td>{{ user.age }} </td>
+         </tr>
+        {% endfor %}
+
+    <div class="cross"></div>
+    <h1>Add a User</h1>
+   <form action="/root" method="post">
+    {% csrf_token %}
+     <div><p>FirstName <input name="ffname" type="text" ></p>
+          <p>last Name <input name="llname" type="text" ></p>
+    </div>
+    <div><p>Email <input type="text" name="eemail"></p>
+        <p>Age<input type="text" name="aage"></p>
+    </div>
+    <button type="submit">add</button>
+   </form>
+</body>
+</html>
