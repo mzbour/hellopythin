@@ -9,7 +9,7 @@ class Dojo(models.Model):
 
 class Ninja(models.Model):
     first_name = models.CharField(max_length=255)
-    dojo = models.ForeignKey(Dojo, related_name="dojos",on_delete = models.CASCADE)  
+    dojo = models.ForeignKey(Dojo, related_name="ninjas",on_delete = models.CASCADE)  
     last_name = models.CharField(max_length=255)
     
 
