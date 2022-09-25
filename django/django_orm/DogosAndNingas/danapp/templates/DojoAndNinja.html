@@ -30,8 +30,8 @@
             <p> FirstName <input type="text" name="first_name"></p>
             <p> LastName <input type="text" name="last_name"></p>
             <p>dojo  <select name="select1" id="select1">
-             {% for dojo in Dojo:%}
-             <option value="{{}}">{{}}</option>
+             {% for dojo in all_of_dojos: %}
+             <option value="{{dojo.name}}"> {{dojo.name}}</option>
             </select>></p>
             {% endfor %}
            <button><input type="submit">Add</button> 
@@ -41,14 +41,12 @@
     <div>
         <h1>All the Dojos</h1>
         {% for dojo in all_of_dojos: %}
-        <h3>Ninjas at the {{dojo.name}} Dojo 
+        <h3>Ninjas at the {{dojo.name}} Dojo </h3>
         <ul>
             {% for ninja in dojo.ninjas.all:%}
             <li>ninja.first_name  ninja.last_name</li>
-        </ul>
            {% endfor %} 
-
-        </h3>
+        </ul>
         {% endfor %}
     </div>
 </div>
