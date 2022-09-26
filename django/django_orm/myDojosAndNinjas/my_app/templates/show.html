@@ -29,11 +29,14 @@
             <input type="hidden" name="add1" value="add_ninga">
             <p> FirstName <input type="text" name="first_name"></p>
             <p> LastName <input type="text" name="last_name"></p>
-            <p>dojo  <select name="select1" id="select1">
+            <p>dojo </p>
+            <select name="select1" id="select1">
              {% for dojo in all_of_dojos %}
              <option value="{{dojo.name}}"> {{dojo.name}}</option>
-            </select>></p>
+           
             {% endfor %}
+            </select>
+            
            <button><input type="submit">Add</button> 
            </div> 
         </form>
