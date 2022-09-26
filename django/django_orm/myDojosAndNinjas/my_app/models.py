@@ -1,6 +1,6 @@
 from django.db import models
 
-from django.db import models
+# from django.db import models
 
 class Dojo(models.Model):
     name = models.CharField(max_length=255)
