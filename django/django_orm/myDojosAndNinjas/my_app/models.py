@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.db import models
+
 class Dojo(models.Model):
     name = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
@@ -12,3 +14,4 @@ class Ninja(models.Model):
     dojo = models.ForeignKey(Dojo, related_name="ninjas",on_delete = models.CASCADE)  
     last_name = models.CharField(max_length=255)
     
+
