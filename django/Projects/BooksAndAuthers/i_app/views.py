@@ -12,7 +12,7 @@ def showauthor(request):
 
 def bookpage(request,idbook):
 #    idid=int(idbook)
-   context={"bookh":Book.objects.get(id=idbook)}
+   context={"bookh":Book.objects.get(id=idbook), "allauthors":Author.objects.all() }
    return render(request,'bookpage.html',context)
 
 
@@ -29,6 +29,14 @@ def addbook(request):
 def addauthor(request):
     Author.objects.create(first_name=request.POST['first_name'],last_name=request.POST['last_name'],nots=request.POST['mynots'] )
     return redirect('/authors')
+
+def addbooksforauthors(request):
+    Author.books.add( Book.objects.create(title=request.POST['selectbook']))
+    return redirect('authors')
+
+def addauthorsforbook(request):
+    Book.authors.add(Author.objects.create(first_name=request.POST['selectauthor']))  
+    return redirect('/')  
 
     
 

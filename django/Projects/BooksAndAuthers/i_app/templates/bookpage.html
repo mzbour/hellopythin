@@ -17,10 +17,10 @@
         <li>{{author.first_name}}</li>
     </ul>
         {% endfor %}
-    <form action="/-------------" method="post">
+    <form action="/" method="post">
     {% csrf_token %}
     <select name="selectauthor" id="selectauthor">
-        {% for author in bookh.authors.all %}
+        {% for author in allauthors %}
         <option value="{{author.first_name}}">{{author.first_name}}</option>
         {% endfor %}       
     </select>

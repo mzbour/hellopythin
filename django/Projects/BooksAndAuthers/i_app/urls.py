@@ -6,5 +6,7 @@ path('books/<int:idbook>', views.bookpage),
 path('authors', views.showauthor),
 path('authors/<int:idauthor>', views.authorpage),
 path('addbook' ,views.addbook),
-path('authors/addauthor' ,views.addauthor)
+path('authors/addauthor' ,views.addauthor),
+path('',views.addbooksforauthors),
+path('',views.addauthorsforbook)
 ]

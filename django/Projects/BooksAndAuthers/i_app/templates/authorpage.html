@@ -18,7 +18,7 @@
      
     </ul>
         {% endfor %}
-    <form action="/addlistbook" method="post">
+    <form action="/" method="post">
     {% csrf_token %}
     <select name="selectbook" id="selectbook">
         {% for book in authorh.books.all %}
