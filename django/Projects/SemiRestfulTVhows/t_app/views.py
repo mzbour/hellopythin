@@ -16,20 +16,6 @@ def first(request):
 #     return redirect('/shows/'+str(fid))
 
 def edit(request,showid):
-    # errors = Show.objects.validate_show(request.POST)
-    # if len(errors) > 0:
-    #     for key, value in errors.items():
-    #         messages.error(request, value)
-    #         return redirect('/shows/edit/'+showid)
-    # else:
-    #  show1=Show.objects.get(id=showid)
-    #  show1.title=request.POST['titleme']
-    #  show1.network=request.POST['network']
-    #  show1.relateddate=request.POST['date']
-    #  show1.desc=request.POST['description']
-    #  show1.save()
-
-    # context={"showone":show1}
     S1=Show.objects.get(id=showid)
     context={"s1":S1}
     return render(request,'edit.html',context)
