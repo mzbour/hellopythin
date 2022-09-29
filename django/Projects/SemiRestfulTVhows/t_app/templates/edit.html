@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit Show {{s1.id}}</h1>
+    <!-- shows/{{showone.id}}/edit -->
+        <form action='/preeditm/{{s1.id}}' method="post">
+        {% csrf_token %}
+        <h3>Title</h3>
+        <input type="text" name="titleme">
+        <h3>NetWork                Released Date</h3>
+        <div><input type="text" name="network">      <input type="date" name="date"></div>
+        <h3>Description </h3>
+        <textarea name="description" id="descripting" cols="30" rows="10"></textarea>
+        <button type="submit">Update</button>
+        </form> 
+        <a href="/shows">Go To show</a>
+        {% if messages %}
+         <ul class="messages">    
+        {% for message in messages %}    
+           <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+        {% endif %}
+</body>
+</html>
