@@ -11,10 +11,6 @@ def first(request):
     myid=(Show.objects.last()).id
     return redirect('/shows/'+str(myid))
 
-
-# def editd(request,fid):
-#     return redirect('/shows/'+str(fid))
-
 def edit(request,showid):
     S1=Show.objects.get(id=showid)
     context={"s1":S1}
@@ -51,7 +47,10 @@ def tv(request,idm):
 def returntotv(request,rid):
     redirect('shows/'+rid)
 
-
+def delete(request,mid):
+    s=Show.objects.get(id=mid)
+    s.delete()
+    return redirect('shows/')
 
 
 

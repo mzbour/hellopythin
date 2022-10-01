@@ -11,5 +11,6 @@ path('shows/<int:rid>',views.returntotv),
 path('act',views.myproplem),
 path('preeditm/<int:myid>',views.preedit),
 # path('sh/<int:fid>',views.editd),
+path('delete/<int:mid>',views.delete),
 
 ]
