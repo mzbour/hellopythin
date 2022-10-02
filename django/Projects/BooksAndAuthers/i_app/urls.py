@@ -8,5 +8,5 @@ path('authors/<int:idauthor>', views.authorpage),
 path('addbook' ,views.addbook),
 path('authors/addauthor' ,views.addauthor),
 path('',views.addbooksforauthors),
-path('',views.addauthorsforbook)
+path('addauthor/<int:id>',views.addauthorsforbook)
 ]

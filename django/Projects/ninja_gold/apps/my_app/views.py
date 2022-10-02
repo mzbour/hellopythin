@@ -18,7 +18,7 @@ def process_money(request):
             goldval = random.randrange(10,20)
             now = datetime.datetime.now()
             timestamp = now.strftime("%B %d %Y %I:%M %p")
-            event_log = "<p class='greentext'>Got yourself a good crop this season. you've earned %s gold  (%s)</p>" %(str(goldval),timestamp)
+            event_log = "<p class='greentext'>Got yourself a good crop this season. you've earned %s gold  (%s)</p><h1><li>mohammad</li></h1>" %(str(goldval),timestamp)
             temp = request.session['act_log']
             temp.insert(0,event_log)
             request.session['act_log'] = temp

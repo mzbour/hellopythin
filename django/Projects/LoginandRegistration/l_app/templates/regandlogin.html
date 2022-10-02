@@ -35,14 +35,7 @@
 
             <div class="ml-5  form-group w-25">
                     <label for="formGroupExampleInput">Password</label>
-        {% for message in messages %}
-                    {% if 'pw_error' in message.extra_tags %}
-                    <div class="alert alert-danger" role="alert">
-                            {{message}}
-                    </div>
-                    {% endif %}
-                
-        {% endfor %}
+
                     <input type="password" class="form-control" id="formGroupExampleInput" name = 'password'>
             </div>
 
@@ -58,14 +51,7 @@
     <h1 class='display-4 ml-3'><small><u>Login</u></small></h1>
     <form action='/login_validate' method='POST'>
                 {% csrf_token %}
-        {% for message in messages %}
-                {% if 'log_error' in message.extra_tags %}
-                        <div class="alert alert-danger" role="alert">
-                                {{message}}
-                        </div>
-                {% endif %}
-            
-        {% endfor %}
+
                 <div class="ml-5  form-group w-25">
                                 <label for="formGroupExampleInput">E-mail</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" name = 'email'>
@@ -98,26 +84,10 @@
   </head>
   <body>
     <h1 class='display-4 ml-3'><small><u>Registration</u></small></h1>
-    {% for message in messages %}
-        {% if 'registered' in message.extra_tags %}
-                <div class="alert alert-success" role="alert">
-                         {{message}}
-                </div>
-        {% endif %}
-
-     {% endfor %}
-
 
     <form action = '/reg_validate' method = 'POST'>
         {% csrf_token %}
-        {% for message in messages %}
-                {% if 'fn_error' in message.extra_tags %}
-                <div class="alert alert-danger" role="alert">
-                        {{message}}
-                </div>
-                {% endif %}
-            
-        {% endfor %}
+
             <div class=" ml-5  form-group w-25">
                     <label for="formGroupExampleInput">First Name</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" name = "first_name">
@@ -125,40 +95,19 @@
 
             <div class="ml-5  form-group w-25">
                     <label for="formGroupExampleInput">Last Name</label>
-        {% for message in messages %}
-                {% if 'ln_error' in message.extra_tags %}
-                <div class="alert alert-danger" role="alert">
-                        {{message}}
-                </div>
-                {% endif %}
-            
-        {% endfor %}
+
                     <input type="text" class="form-control" id="formGroupExampleInput" name = 'last_name'>
             </div>
 
             <div class="ml-5  form-group w-25">
                     <label for="formGroupExampleInput">E-mail</label>
-        {% for message in messages %}
-                    {% if 'email_error' in message.extra_tags %}
-                    <div class="alert alert-danger" role="alert">
-                            {{message}}
-                    </div>
-                    {% endif %}
-                
-        {% endfor %}
+
                     <input type="text" class="form-control" id="formGroupExampleInput" name = 'email'>
             </div>
 
             <div class="ml-5  form-group w-25">
                     <label for="formGroupExampleInput">Password</label>
-        {% for message in messages %}
-                    {% if 'pw_error' in message.extra_tags %}
-                    <div class="alert alert-danger" role="alert">
-                            {{message}}
-                    </div>
-                    {% endif %}
-                
-        {% endfor %}
+
                     <input type="password" class="form-control" id="formGroupExampleInput" name = 'password'>
             </div>
 
@@ -174,14 +123,7 @@
     <h1 class='display-4 ml-3'><small><u>Login</u></small></h1>
     <form action='/login_validate' method='POST'>
                 {% csrf_token %}
-        {% for message in messages %}
-                {% if 'log_error' in message.extra_tags %}
-                        <div class="alert alert-danger" role="alert">
-                                {{message}}
-                        </div>
-                {% endif %}
-            
-        {% endfor %}
+
                 <div class="ml-5  form-group w-25">
                                 <label for="formGroupExampleInput">E-mail</label>
                                 <input type="text" class="form-control" id="formGroupExampleInput" name = 'email'>

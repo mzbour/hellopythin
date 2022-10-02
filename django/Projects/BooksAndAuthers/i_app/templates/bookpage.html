@@ -17,14 +17,14 @@
         <li>{{author.first_name}}</li>
     </ul>
         {% endfor %}
-    <form action="/" method="post">
+    <form action="/addauthor/{{bookh.id}}" method="post">
     {% csrf_token %}
     <select name="selectauthor" id="selectauthor">
         {% for author in allauthors %}
         <option value="{{author.first_name}}">{{author.first_name}}</option>
         {% endfor %}       
     </select>
-    <button type="submit"></button>
+    <button type="submit">add</button>
     </form>
 </body>
 </html>

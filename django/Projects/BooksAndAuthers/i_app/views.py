@@ -9,7 +9,6 @@ def showauthor(request):
     context={"authorm":Author.objects.all()}
     return render(request,'showauthor.html',context)
 
-
 def bookpage(request,idbook):
 #    idid=int(idbook)
    context={"bookh":Book.objects.get(id=idbook), "allauthors":Author.objects.all() }
@@ -34,9 +33,10 @@ def addbooksforauthors(request):
     Author.books.add( Book.objects.create(title=request.POST['selectbook']))
     return redirect('authors')
 
-def addauthorsforbook(request):
-    Book.authors.add(Author.objects.create(first_name=request.POST['selectauthor']))  
-    return redirect('/')  
+def addauthorsforbook(request,id):
+    a1=Author.objects.create(first_name=request.POST['selectauthor'])
+    Book.authors.add(a1)  
+    return redirect('books/'+str(id))  
 
     
 
