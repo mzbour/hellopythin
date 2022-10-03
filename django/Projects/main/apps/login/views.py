@@ -4,7 +4,11 @@ import re
 import bcrypt
 from .models import *
 
-
+		# path('', views.index),
+        # path('reg_validate', views.reg_validate),
+		# path('login_validate', views.login_validate),
+		# path('home', views.home),
+		# path('logout', views.logout)
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NAME_REGEX = re.compile(r'^[a-zA-Z]+$')
 
@@ -16,6 +20,7 @@ def index(request):
         request.session['u_id'] = 0
 
     return render(request, 'index.html')
+
 
 def reg_validate(request):
     check = User.objects.filter(email = request.POST['email'])
@@ -57,8 +62,6 @@ def reg_validate(request):
 
     elif error == False:
         my_hashed = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
-
-        # decoded_hash = hashed.decode('utf-8')
 
         User.objects.create(first_name = request.POST['first_name'], last_name = request.POST['last_name'], email = request.POST['email'], password = my_hashed)
 

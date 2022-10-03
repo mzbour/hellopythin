@@ -3,14 +3,14 @@ from urllib import request
 from django.shortcuts import render,redirect
 my_account=1000
 def index(request):
-    return redirect('amadon/')
+    return redirect('/amadon')
 
 def amadon(request):
     return render(request,'a.html')
 
 
 def buy(reauest):
-    if request.POST['product_id']=='19':
+    if request.POST['product_id'] =='19':
         context={
            "prise":19.99,"quantity":int(request.POST['quantity']),"spent":19.99*int(request.POST['quantity'])
         }
@@ -32,8 +32,8 @@ def buy(reauest):
         }
         return render(request,'show.html',context)  
 
-def red(reques):
-    return redirect('amadon/buy')
+# def red(reques):
+#     return redirect('/amadon/buy')
 # def show(request):
 #     context={
 

@@ -6,4 +6,5 @@ urlpatterns = [
     path('amadon/',views.amadon),
     path('amadon/buy',views.buy),
     
-    path('name',views.red)]
+    # path('name',views.red)
+    ]
