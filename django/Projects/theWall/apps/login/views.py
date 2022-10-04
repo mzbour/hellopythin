@@ -110,7 +110,9 @@ def wall(request):
         'user':user[0],
         'fname' : request.session['fname'],
         'messages' : Message.objects.all(),
+        # 'messages' : User.messages,
         'comments' : Comment.objects.all(),
+        # 'comments' : User.comments
         }
         return render(request, 'wall.html', user_info)
 

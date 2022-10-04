@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="log">
-                    {% for msg in messages%}
+                    {% for msg in messages %}
                         <div class="user_messages">
                             {{msg.user.first_name}} {{msg.user.last_name}} {{msg.updated_at}}
                             <p>{{msg.message_text}}</p>

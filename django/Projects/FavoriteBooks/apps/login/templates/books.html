@@ -11,16 +11,27 @@
     <title>Home</title>
   </head>
   <body>
-        
+    <!-- 'liked_books':user[0].liked_books.all(),
+    'user':user[0],
+    'uploded_books':user[0].uploaded_books.all() -->
      <div class="r1">
-      <h1> welcome,{{}}!!</h1>
+      <h1> welcome,{{user.first_name}}!!</h1>
       <a href="/logout"><button type="button" class="btn btn-outline-primary">logout</button></a>
      </div>
      <h2>Add a Favotite Book</h2>
-     <form action="/books" method="post">
+     <form action="/addbook/{{user.id}}" method="post">
+     {% csrf_token %}
      <div>
      <p>Title </p><input type="text" name="title">
     </div> 
+    {% for message in messages %}
+    {% if 'title_e' in message.extra_tags %}
+            <div class="alert alert-danger" role="alert">
+                    {{message}}
+            </div>
+    {% endif %}
+
+{% endfor %}
       <div>
         <h3>Description </h3>
         <textarea name="des" id="des" cols="30" rows="10"></textarea>
@@ -31,14 +42,26 @@
     
 <div>
 <h2>All Books</h2>
-{% for book in books %}
-<a href="/books/{{}}">{{}}</a>
-<h3>(added by {{}} Baggins)</h3>
-<h4>this is one of your faviorets</h4>
+{% for book in allbooks %}
+
+ <a href="/books/{{book.id}}">{{book.name}}</a><br>
+
+
+ <h3>(added by {{book.uploader.first_name}} Baggins)</h3>
+ {% if book.uploader.liked_books %}
+ <h4>this is one of your faviorets</h4>
+ {% endif %}
+
+ <a href="/book/{{book.id}}">{{book.name}}</a><br>
+
+<!-- <h4>this is one of your faviorets</h4> -->
+{% if user.liked_books.all == null %}
+<a href="/addfavbook/{{book.id}}">Add To Faviorets</a>
+{% endif %}
 {% endfor %}
 
 </div>
-    
+  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
